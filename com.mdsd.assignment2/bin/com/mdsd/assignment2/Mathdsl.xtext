@@ -1,0 +1,43 @@
+grammar com.mdsd.assignment2.Mathdsl with org.eclipse.xtext.common.Terminals
+
+generate mathdsl "http://www.mdsd.com/assignment2/Mathdsl"
+
+MathExp:
+	//'var' name=ID '=' exp=Exp
+	variables+=VarBinding*
+;
+VarBinding:
+	'var' name=ID '=' exp=Exp
+;
+Exp returns Expression:
+	 Term (({Plus.left=current} '+' | {Minus.left=current} '-' ) right=Term)*
+;
+Term returns Expression:
+	Primary (({Mult.left=current} '*' | {Div.left=current} '/') right=Primary)*
+;
+
+Primary returns Expression:
+	Number | Parenthesis | VariableUse | LetBinding 
+;
+Binding:
+	LetBinding | VarBinding
+;
+/*VariableBinding returns Expression:
+	{Let} 'let' var=ID '=' binding=Exp 'in' body=Exp 'end'
+;*/
+LetBinding:
+	'let' name=ID '=' binding=Exp 'in' body=Exp 'end'
+;
+Parenthesis returns Expression:
+	'(' Exp ')'
+;
+
+Number returns Expression:
+	{Num} value=INT
+;
+
+VariableUse returns Expression:
+	{VarUse} ref = [Binding]
+	//{Var} ref=[MathExp] '.' id=ID
+	//{Var} id=ID
+;

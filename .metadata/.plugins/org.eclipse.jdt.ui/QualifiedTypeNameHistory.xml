@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.Announce"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.FictiondslPackage"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.FictiondslPackage.Literals"/>
+    <fullyQualifiedTypeName name="interactive.scoping.AbstractFictiondslScopeProvider"/>
+    <fullyQualifiedTypeName name="interactive.validation.AbstractFictiondslValidator"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.Story"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.Scenario"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.External"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtend.lib.macro.declaration.NamedElement"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.ecore.EStructuralFeature"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.End"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.Question"/>
+    <fullyQualifiedTypeName name="interactive.FictiondslRuntimeModule"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.Target"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.Expression"/>
+    <fullyQualifiedTypeName name="interactive.fictiondsl.impl.StatementImpl"/>
+    <fullyQualifiedTypeName name="org.eclipse.xtext.validation.Check"/>
+    <fullyQualifiedTypeName name="ui.languagedsl.Title"/>
+    <fullyQualifiedTypeName name="ui.languagedsl.Element"/>
+    <fullyQualifiedTypeName name="ui.languagedsl.Input"/>
+    <fullyQualifiedTypeName name="org.eclipse.emf.common.util.EList"/>
+    <fullyQualifiedTypeName name="ui.languagedsl.Button"/>
+    <fullyQualifiedTypeName name="ui.languagedsl.Condition"/>
+    <fullyQualifiedTypeName name="ui.languagedsl.LanguagedslPackage"/>
+    <fullyQualifiedTypeName name="ui.languagedsl.LanguagedslPackage.Literals"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+</qualifiedTypeNameHistroy>

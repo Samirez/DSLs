@@ -1,0 +1,45 @@
+grammar com.mdsd.assignment3.Mathdsl with org.eclipse.xtext.common.Terminals
+
+generate mathdsl "http://www.mdsd.com/assignment3/Mathdsl"
+
+MathExp:
+	'program' name=ID
+	external+=External*
+	variables += VarBinding*
+;
+
+VarBinding:
+	'var' name=ID '=' expression=Exp
+;
+External:
+	'external' name=ID ('()' | '(' arguments+=ExternalArgument (',' arguments+=ExternalArgument)* ')')
+;
+ExternalArgument:
+	'int'
+;
+ExternalUse:
+ref=[External] ('()' | '(' arguments+=Exp (',' arguments+=Exp)* ')' )
+;
+Exp returns Expression:
+	Factor (( {Plus.left=current} '+' | {Minus.left=current}  '-' ) right=Factor)*
+;
+
+Factor returns Expression:
+	Primary (({Mult.left=current} '*' | {Div.left=current}  '/'  ) right=Primary)*
+;
+
+Primary returns Expression:
+	{MathNumber} value=INT  | {Parenthesis} '(' expression=Exp ')'  |  VariableUse | LetBinding | ExternalUse
+;
+
+LetBinding:
+	'let' name=ID '=' binding=Exp 'in' body=Exp 'end'
+;
+
+Binding:
+	VarBinding | LetBinding
+;
+
+VariableUse:
+	ref = [Binding]
+;

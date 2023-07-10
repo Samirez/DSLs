@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<section name="Workbench">
+	<section name="org.eclipse.jdt.debug.ui.MAIN_METHOD_SELECTION_DIALOG">
+		<item key="ShowStatusLine" value="true"/>
+		<item key="History" value="&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#x0D;&#x0A;&lt;History&gt;&#x0D;&#x0A;&lt;historyRootNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=com.mdsd.assignment2/C:\/Users\/Ahmadullah\/.p2\/pool\/plugins\/org.eclipse.emf.codegen.ecore_2.33.0.v20230211-1150.jar&amp;lt;org.eclipse.emf.codegen.ecore(CodeGenEcorePlugin.class[CodeGenEcorePlugin&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=com.mdsd.assignment2/C:\/Users\/Ahmadullah\/.p2\/pool\/plugins\/org.eclipse.emf.codegen_2.23.0.v20230211-1150.jar&amp;lt;org.eclipse.emf.codegen(CodeGenPlugin.class[CodeGenPlugin&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=com.mdsd.assignment3/C:\/Users\/Ahmadullah\/.p2\/pool\/plugins\/org.eclipse.emf.codegen.ecore_2.33.0.v20230211-1150.jar&amp;lt;org.eclipse.emf.codegen.ecore(CodeGenEcorePlugin.class[CodeGenEcorePlugin&lt;/infoNode&gt;&#x0D;&#x0A;&lt;infoNode&gt;=ui.language/C:\/Users\/Ahmadullah\/.p2\/pool\/plugins\/org.eclipse.emf.codegen.ecore_2.33.0.v20230211-1150.jar&amp;lt;org.eclipse.emf.codegen.ecore(Generator.class[Generator&lt;/infoNode&gt;&#x0D;&#x0A;&lt;/historyRootNode&gt;&#x0D;&#x0A;&lt;/History&gt;"/>
+		<section name="DialogBoundsSettings">
+			<item key="DIALOG_HEIGHT" value="500"/>
+			<item key="DIALOG_WIDTH" value="600"/>
+			<item key="DIALOG_X_ORIGIN" value="155"/>
+			<item key="DIALOG_Y_ORIGIN" value="190"/>
+			<item key="DIALOG_FONT_NAME" value="1|Segoe UI|9.0|0|WINDOWS|1|-12|0|0|0|400|0|0|0|1|0|0|0|0|Segoe UI"/>
+		</section>
+	</section>
+</section>

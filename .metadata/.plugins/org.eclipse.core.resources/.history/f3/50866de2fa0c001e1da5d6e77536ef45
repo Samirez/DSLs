@@ -1,0 +1,60 @@
+grammar interactive.Fictiondsl with org.eclipse.xtext.common.Terminals
+
+generate fictiondsl "http://www.Fictiondsl.interactive"
+
+Story:
+	'story' name=ID external+=External* scenario+=Scenario*
+;
+
+External:
+	'function' name=ID '('type=Type')' ':' result=Type
+;
+	
+Scenario:
+	'scenario' name=ID '{' (var+=VarDef)* statement+=Statement* '}'
+;
+
+VarDef:
+	'var' name=ID ':' type=Exp
+;
+
+Statement:
+	announce+=Announce | end+=End | question+=Question
+;
+
+Question:
+	'question' name=ID expression=Exp ('as' ( type=Type | exref=[External] '('type=Type')' ) )? (op=('<' | '<=' | '>' | '>='| '==' | '!=') condition=Exp)? ('in' ref=[VarDef])? target+=Target+
+;
+
+Announce:
+	'announce' name=ID expression=Exp ('&' ref=[VarDef] '&' exp=Exp)? target=Target
+;
+
+Target:
+	'to' ref=[SomeRef] ('if' (exref=[External] (condition=Exp) ( '(' 'this' ')' )? | '(' vardef=[VarDef]')' (res=Exp)? | condition=Exp | vardef=[VarDef] condition=Exp) )?
+;
+
+End:
+	'end' name=ID expression=Exp ('&' ref=[VarDef] '&' exp=Exp)?
+;
+
+Exp returns Expression:
+  {Ending} value=STRING |
+   number=INT |
+   type=Type |
+   'this' Evaluate |
+   Evaluate 
+;
+
+Evaluate returns Expression:
+	(add=('+'| '-') ref=[VarDef])? op=('<' | '<=' | '>' | '>='| '==' | '!=') exp=Exp
+;
+Type:
+		'text' |
+	 	'number' |
+ 		'boolean' 
+;
+
+SomeRef:
+	Announce | End | Question
+;

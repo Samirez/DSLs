@@ -1,0 +1,27 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: interactive.fiction.ui
+Bundle-ManifestVersion: 2
+Bundle-Name: interactive.fiction.ui
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: interactive.fiction.ui; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: interactive.fiction,
+ interactive.fiction.ide,
+ org.eclipse.xtext.ui,
+ org.eclipse.xtext.ui.shared,
+ org.eclipse.xtext.ui.codetemplates.ui,
+ org.eclipse.ui.editors;bundle-version="3.14.300",
+ org.eclipse.ui.ide;bundle-version="3.18.500",
+ org.eclipse.ui,
+ org.eclipse.compare,
+ org.eclipse.xtext.builder
+Import-Package: org.apache.log4j
+Bundle-RequiredExecutionEnvironment: JavaSE-19,
+ JavaSE-17
+Export-Package: interactive.ui.contentassist,
+ interactive.ui.quickfix,
+ interactive.fiction.ui.internal,
+ com.example.ui.quickfix,
+ com.example.ui.contentassist
+Bundle-Activator: interactive.fiction.ui.internal.FictionActivator

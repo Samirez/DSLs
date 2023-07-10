@@ -1,0 +1,77 @@
+grammar ui.Languagedsl with org.eclipse.xtext.common.Terminals
+
+generate languagedsl "http://www.Languagedsl.ui"
+
+Title:
+	'title' name=ID form+=Form*
+	
+	;
+
+Form:
+	'form' name=ID ('('(param+=Parameter (',' param2+=Parameter)*)?')')? '{' layout+=Layout '}'
+;
+
+Parameter:
+	name=ID ':' type=Type
+;
+
+FormUse:
+	name=ID '('(exp=Exp (',' exp2=Exp)?)')'
+;
+
+Layout:
+	{Layout} ('row' | 'column') '{' component+=Component* '}'
+;
+
+Component:
+	layout+=Layout | {Component} element+=Element | formuse+=FormUse
+;
+
+Element:
+	label+=Label | input+=Input | button+=Button
+;
+
+Button:
+	'button' (save=Save)? name=ID ':' exp=Exp
+;
+
+Save:
+	'*'
+;
+
+Input:
+	'input' name=ID ':' (exp=Exp condition=Condition? | ref=[Reference] '==' exp=Exp )
+;
+
+
+Reference:
+	Input | Button
+;
+
+Condition:
+	op=('>'|'<'|'<='|'>='|'=='|'!=') exp=Exp 
+	('&&' type=Type op2=('>'|'<'|'<='|'>='|'=='|'!=') exp2=Exp)?
+;
+
+Label:
+	'label' ':' exp=Exp ('&'name=Exp'&')?
+;
+
+Exp:
+	value=STRING |
+	type=Type |
+	number=INT |
+	TextExp |
+	name=ID
+;
+
+TextExp:
+	'#' exp=Exp
+;
+
+
+
+Type:
+	'string' | 'boolean' | 'number'
+;
+	

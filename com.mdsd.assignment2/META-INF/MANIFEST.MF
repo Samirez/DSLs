@@ -1,0 +1,29 @@
+Manifest-Version: 1.0
+Automatic-Module-Name: com.mdsd.assignment2
+Bundle-ManifestVersion: 2
+Bundle-Name: com.mdsd.assignment2
+Bundle-Vendor: My Company
+Bundle-Version: 1.0.0.qualifier
+Bundle-SymbolicName: com.mdsd.assignment2; singleton:=true
+Bundle-ActivationPolicy: lazy
+Require-Bundle: org.eclipse.xtext,
+ org.eclipse.xtext.xbase,
+ org.eclipse.equinox.common;bundle-version="3.16.0",
+ org.eclipse.emf.ecore,
+ org.eclipse.xtext.xbase.lib;bundle-version="2.14.0",
+ org.eclipse.xtext.util,
+ org.eclipse.emf.common,
+ org.antlr.runtime;bundle-version="[3.2.0,3.2.1)"
+Bundle-RequiredExecutionEnvironment: JavaSE-17
+Export-Package: com.mdsd.assignment2.mathdsl,
+ com.mdsd.assignment2.scoping,
+ com.mdsd.assignment2.validation,
+ com.mdsd.assignment2.mathdsl.util,
+ com.mdsd.assignment2,
+ com.mdsd.assignment2.serializer,
+ com.mdsd.assignment2.parser.antlr,
+ com.mdsd.assignment2.generator,
+ com.mdsd.assignment2.services,
+ com.mdsd.assignment2.mathdsl.impl,
+ com.mdsd.assignment2.parser.antlr.internal
+Import-Package: org.apache.log4j
