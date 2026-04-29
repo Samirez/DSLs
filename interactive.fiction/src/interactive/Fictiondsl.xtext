@@ -7,7 +7,7 @@ Story:
 ;
 
 External:
-	'function' name=ID '(' type=Type/*(type=Type (',' typelist=Type)*)? ')'*/ ')' ':' result=Type
+	'function' name=ID '(' type=Type ')' ':' result=Type
 ;
 	
 Scenario:
@@ -39,20 +39,19 @@ End:
 ;
 
 Exp returns Expression:
-  {Ending} value=STRING |
-   number=INT |
-   type=Type |
-   'this' Evaluate |
-   Evaluate 
+	value=STRING |
+	number=INT |
+	type=Type |
+	'this' Evaluate |
+	Evaluate 
 ;
 
 Evaluate returns Expression:
 	(add=('+'| '-') ref=[VarDef])? op=('<' | '<=' | '>' | '>='| '==' | '!=') exp=Exp
 ;
+
 Type:
-		'text' |
-	 	'number' |
- 		'boolean' 
+	'text' | 'number' | 'boolean'
 ;
 
 SomeRef:
